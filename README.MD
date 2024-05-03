@@ -10,7 +10,7 @@ My goal in doing this project is to learn golang and complex frontend.
 - User-based identification using cookies
 - Flexbox-based layout for responsive design
 - Distinct visual styles for messages sent by the user and others
-- Input validation to prevent sending empty messages
+- Input validation to prevent sending empty usernames
 - Support for sending messages by pressing "Enter" or clicking a "Send" button
 - Basic login system with username input
 
