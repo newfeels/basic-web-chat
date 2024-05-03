@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/b.png'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    color: white; /* Cambiar el color del texto a blanco */
+}
+
+.overlay {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Cambiar a disposición en columna */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.blur {
+    background-color: rgba(0, 0, 0, 0.2); /* Color de fondo blanco semitransparente */
+    backdrop-filter: blur(10px); /* Aplicar efecto de desenfoque */
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Opcional: Agregar sombra para efecto de profundidad */
+    transition: transform 0.3s ease-in-out; /* Agregar transición al hacer clic */
+    margin: 0 10px; /* Añadir margen lateral para espaciar los contenedores */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el contenedor */
+    transition: transform 0.3s ease-in-out, opacity 0.5s;
+    border: 0.1px solid rgb(204, 204, 204);
+    font-size: 1em;
+}
+
+.blur_borderless {
+    background-color: rgba(0, 0, 0, 0.2); /* Color de fondo blanco semitransparente */
+    backdrop-filter: blur(10px); /* Aplicar efecto de desenfoque */
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Opcional: Agregar sombra para efecto de profundidad */
+    transition: transform 0.3s ease-in-out; /* Agregar transición al hacer clic */
+    margin: 0 10px; /* Añadir margen lateral para espaciar los contenedores */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el contenedor */
+    transition: transform 0.3s ease-in-out, opacity 0.5s;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+/* Agregar regla CSS para la animación */
+@keyframes shrink {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.text-container {
+    text-align: center;
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Desplazar hacia abajo */
+    transition: opacity 0.5s, transform 0.5s; /* Transición al aparecer */
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparente */
+    width: 80%; /* Para un poco de margen */
+    max-width: 300px; /* Ancho máximo para evitar que sea demasiado grande */
+    pointer-events: auto; /* Permitir interacción con el campo */
+}

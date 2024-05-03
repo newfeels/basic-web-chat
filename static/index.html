@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <script src="/static/js/index.js"></script> <!-- Cargar el script del chat -->
+</head>
+<body>
+    
+    <div class="container">
+        <div class="text-container" id="newContainer">
+            <h2>Chat</h2>
+        </div>
+        <div class="chat-box" id="chat"></div>
+        <div class="container-horizontal">
+            <input type="text" id="msg" placeholder="Escribe un mensaje..." onkeypress="if(event.key === 'Enter') { sendMessage(); }">
+            <div class="buttons-container" onclick="shrinkContainer(this)">
+                <div class="blur" onclick="sendMessage()">
+                    <img src="/static/img/s.png" alt="Send" class="send-icon"> 
+                </div>
+            </div>  
+        </div>
+        
+    </div>
+</body>
+</html>
