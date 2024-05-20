@@ -1,8 +1,28 @@
 function login() {
     var username = document.getElementById("username").value;
-    document.cookie = "username=" + encodeURIComponent(username) + "; path=/";
-    window.location.href = "/chat";
+    
+    console.log("pre peticion\n");
+    fetch('/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username: username })
+    })
+    .then(response => {
+        if (response.ok) {
+            // Si la solicitud fue exitosa, redirigir a la página de contactos
+            window.location.href = "/contacts";
+        } else {
+            // Manejar errores si la solicitud no fue exitosa
+            console.error('Error al iniciar sesión:', response.statusText);
+        }
+    })
+    .catch(error => {
+        console.error('Error al enviar solicitud:', error);
+    });
 }
+
 
 function shrinkContainer(container) {
     container.style.animation = 'shrink 0.2s ease-in-out';
