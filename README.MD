@@ -30,6 +30,7 @@ My goal in doing this project is to learn golang and complex frontend.
 - `main.go`: Go server code to handle WebSocket connections and broadcast messages to all connected clients.
 - `static/`: Static files for the frontend (HTML, CSS, JavaScript, images).
 - `db/`: SQL petitions for database
+- `src/`: Source go code for the backend
 
 ## Deploy
 Download postgres SQL and create database with username and password that you
