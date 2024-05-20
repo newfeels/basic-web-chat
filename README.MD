@@ -13,13 +13,36 @@ My goal in doing this project is to learn golang and complex frontend.
 - Input validation to prevent sending empty usernames
 - Support for sending messages by pressing "Enter" or clicking a "Send" button
 - Basic login system with username input
+- Private chat with other users
+- Persistence in SQL database
+- Contact selection page
+
+## TODO
+- Show previous messages when opening a chat
+- Message encryption 
+- Password login
+- Sing in page
+- Integration with IAM (Keycloak)
+- Request-Accept system for contacts
 
 ## Structure
 
 - `main.go`: Go server code to handle WebSocket connections and broadcast messages to all connected clients.
 - `static/`: Static files for the frontend (HTML, CSS, JavaScript, images).
+- `db/`: SQL petitions for database
 
 ## Deploy
+Download postgres SQL and create database with username and password that you
+prefer, change that parameters in *src/back.go* 
+```
+const (
+	host     = "localhost"
+	port     = 5432
+	user     = "<your_username>"
+	password = "<your_password>"
+	dbname   = "<your_db_name>"
+)
+```
 In the root folder of this project:
 ```
 go run .\main.go
